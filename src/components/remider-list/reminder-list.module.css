@@ -1,0 +1,85 @@
+.reminder-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); 
+  gap: 40px;
+  padding: 20px;
+}
+
+.reminder-card {
+  background-color: #f0f0f0; 
+  border: 2px solid #d1d1d1; 
+  border-radius: 12px; 
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 200px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.reminder-card:hover {
+  transform: translateY(-5px); 
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.reminder-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; 
+  flex-grow: 1; 
+  text-align: center;
+}
+
+.reminder-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.reminder-content {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: auto;
+}
+
+.reminder-footer {
+  margin-top: auto;
+}
+
+.reminder-datetime {
+  font-size: 12px;
+  color: #999;
+}
+
+.reminder-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.reminder-actions button {
+  background-color: #ccc;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #333;
+  transition: background-color 0.2s ease;
+}
+
+.reminder-actions button:hover {
+  background-color: #bbb;
+}
+
+.no-reminders {
+  color: #666;
+  font-size: 16px;
+}
+
+.overdue {
+  border-color: #ff6b6b;
+  background-color: #ffe5e5; 
+}

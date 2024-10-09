@@ -1,0 +1,52 @@
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  width: 80%;
+  max-width: 400px;
+}
+
+.popup h2 {
+  font-size: 20px;
+  color: #666;
+}
+
+.popup input {
+  margin-bottom: 15px;
+}
+
+.popup button {
+  background-color: #c5c5c5;
+}
+
+.overdue-popup {
+  background-color: #f9f9f9; 
+  border-left: 5px solid #ffa0a0; 
+}
+
+.overdue-popup .overdue-reminder {
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #f2f2f2;
+}
+
+.overdue-popup button {
+  background-color: #e0e0e0;
+  color: #333;
+  margin-right: 10px;
+}
+
+.overdue-popup button:hover {
+  background-color: #c8c8c8;
+}
+
+.overdue-reminder {
+  background-color: #ffe5e5;
+  border-left: 5px solid #ff9494;
+}

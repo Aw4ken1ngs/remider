@@ -1,0 +1,27 @@
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f5f5f5; 
+  color: #333; 
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.create-btn {
+  background-color: #a8d5ba;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px; 
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.create-btn:hover {
+  background-color: #8fc6a8;
+}
