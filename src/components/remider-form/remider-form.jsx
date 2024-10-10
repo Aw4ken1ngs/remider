@@ -9,6 +9,7 @@ export function ReminderForm({
   setEditingReminderId,
   reminders,
 }) {
+
   const [form, setForm] = useState({
     title: "",
     content: "",
@@ -28,6 +29,7 @@ export function ReminderForm({
           date: reminder.date,
           status: reminder.status,
         });
+        
       }
     }
   }, [editingReminderId, reminders]);
@@ -55,6 +57,11 @@ export function ReminderForm({
     setIsPopupOpen(false);
   };
 
+  const closePopup = () => {
+    setEditingReminderId(null)
+    setIsPopupOpen(false)
+  }
+
   return (
     <div className={styles['overlay']}>
       <div className={styles['popup']}>
@@ -64,8 +71,7 @@ export function ReminderForm({
         <input name="date" type="date" value={form.date} onChange={onFormChange} placeholder="Дата" />
         <input name="time" type="time" value={form.time} onChange={onFormChange} placeholder="Время" />
         <button onClick={onSubmit}>{editingReminderId ? "Обновить" : "Создать"}</button>
-        <button onClick={() => setIsPopupOpen(false)}>Закрыть</button>
-        {editingReminderId && <button onClick={() => setEditingReminderId(null)}>Отмена</button>}
+        {editingReminderId && <button onClick={() => closePopup()}>Закрыть</button>}
       </div>
     </div>
   );

@@ -6,8 +6,7 @@ export function ReminderList({
   filter,
   onEditClick,
   deleteReminder,
-  markAsCompleted,
-  remindLater,
+  setIsPopupOpen
 }) {
   const filteredReminders = reminders.filter((reminder) => {
     if (filter === "completed") {
@@ -20,6 +19,10 @@ export function ReminderList({
     return reminder.status === "pending" && Date.now() < new Date(`${reminder.date}T${reminder.time}`);
   });
 
+  const onEdit = (reminder) => {
+    onEditClick(reminder.id)
+    setIsPopupOpen(true)
+  }
   return (
     <div className={styles['reminder-list']}>
       {filteredReminders.length > 0 ? (
@@ -38,7 +41,7 @@ export function ReminderList({
               </div>
             </div>
             <div className={styles['reminder-actions']}>
-              <button onClick={() => onEditClick(reminder)}>Редактировать</button>
+              <button onClick={() => onEdit(reminder)}>Редактировать</button>
               <button onClick={() => deleteReminder(reminder.id)}>Удалить</button>
             </div>
           </div>

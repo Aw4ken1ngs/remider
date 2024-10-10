@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import "./styles.css";
 import { ReminderList } from "./components/remider-list/remider-list";
 import { ReminderForm } from "./components/remider-form/remider-form";
@@ -23,14 +23,13 @@ export default function App() {
   useEffect(() => {
     clearInterval(intervalID.current);
     intervalID.current = window.setInterval(() => {
-      const now = new Date();
       const newOverdue = reminders.filter(
         (reminder) =>
           reminder.status === "pending" &&
           Date.now() >= new Date(`${reminder.date}T${reminder.time}`)
       );
       setOverdueReminders(newOverdue);
-    }, 1000);
+    }, 100);
   }, [reminders]);
 
   useEffect(() => {
@@ -116,6 +115,7 @@ export default function App() {
         onEditClick={setEditingReminderId}
         markAsCompleted={markAsCompleted}
         remindLater={remindLater}
+        setIsPopupOpen={setIsPopupOpen}
       />
       <OverdueReminderPopup
         overdueReminders={overdueReminders}
