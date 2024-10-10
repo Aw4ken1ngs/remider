@@ -71,7 +71,7 @@ export function ReminderForm({
         <input name="date" type="date" value={form.date} onChange={onFormChange} placeholder="Дата" />
         <input name="time" type="time" value={form.time} onChange={onFormChange} placeholder="Время" />
         <button onClick={onSubmit}>{editingReminderId ? "Обновить" : "Создать"}</button>
-        {editingReminderId && <button onClick={() => closePopup()}>Закрыть</button>}
+        <button onClick={() => closePopup()}>Закрыть</button>
       </div>
     </div>
   );

@@ -54,7 +54,7 @@ export default function App() {
   const editReminder = (title, content, time, date, id) => {
     const remindersDraft = reminders.map((reminder) => {
       if (reminder.id === id) {
-        return { title, content, time, date, id, status: reminder.status };
+        return { title, content, time, date, id, status: "pending" };
       }
       return reminder;
     });
